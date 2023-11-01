@@ -1,0 +1,23 @@
+{% extends "Url/base.html" %}
+{% block content %}
+
+<table class="table table-striped">
+    {% for url in urls %}
+    <tr>
+        <td>
+            <a class="" href="">{{ url.long_url }}</a>
+        </td>
+        <td>
+            <a class="" href="http://localhost:8000/{{ url.short_url }}">http://localhost:8000/{{ url.short_url }}</a>
+        </td>
+    </tr>  
+    {%endfor%}
+
+</table>
+
+<a class="btn btn-outline-info" href="{% url 'url-shortener'%}">Create New</a>
+
+
+
+
+{%endblock%}

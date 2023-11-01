@@ -1,0 +1,18 @@
+{% extends "Url/base.html" %}
+{% block content %}
+    <div class="container my-5">
+        <div class="p-5 text-center text-muted bg-body border border-dashed rounded-5">
+          <h1 class="text-body-emphasis">Your URL has been shortened.</h1>
+          <p class=" mb-4 w-100 ">
+            Original Link: <a href="{{object.long_url}}">{{ object.long_url }}</a>
+            <br>
+            <br>
+            Shortened Link: <a href="http://localhost:8000/{{ object.short_url }}">http://localhost:8000/{{ object.short_url }}</a>
+          </p>
+        </div>
+      </div>
+      <a class="btn btn-outline-info" href="{% url 'url-all'%}">All Urls</a>
+      <a class="btn btn-outline-info" href="{% url 'url-shortener'%}">Create New</a>
+
+
+{% endblock content %}
